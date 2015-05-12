@@ -17,11 +17,13 @@ require 'pry-byebug'
 # No more bottles of beer on the wall :-(
 
 def print_bottles (bottles)
-  puts %{#{bottles} bottles of beer on the wall
-#{bottles} of beer!
+  puts %{#{bottles} #{(bottles == 1) ? "bottle" : "bottles"} of beer on the wall
+#{bottles} #{(bottles == 1) ? "bottle" : "bottles"} of beer!
 You take one down and pass it around,
 }
-  if bottles - 1 == 0
+  if bottles - 1 == 1
+    puts "#{bottles - 1} bottle of beer on the wall"
+  elsif bottles - 1 == 0
     puts "No more bottles of beer on the wall :-("
   else
     puts "#{bottles - 1} bottles of beer on the wall"
