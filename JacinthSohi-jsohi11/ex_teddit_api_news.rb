@@ -15,16 +15,15 @@ require 'json'
 stories = []
 
 #Create the upvote calculator
-def calculate_upvotes (title, category)
-	upvotes = 1
+def calculate_upvotes (upvotes, title, category)
 	if title.downcase.include? "cat"
-		upvotes == upvotes * 5
+		upvotes = upvotes * 5
 	elsif title.downcase.include? "bacon"
-		upvotes == upvotes * 8
+		upvotes = upvotes * 8
+	elsif category.downcase.include? "world"
+		upvotes = upvotes * 3
 	end
-	if category.downcase.include? "food"
-		upvotes == upvotes * 3
-	end
+	return upvotes
 end
 
 #Create a method to gather the reddit stories, and save them in an array with hashes of story details
@@ -32,14 +31,18 @@ def find_reddit_stories
 	reddit_stories = []
 	reddit_data = RestClient.get("http://www.reddit.com/r/aww.json")
 	reddit_results = JSON.parse(reddit_data)
-	reddit_posts = reddit_results["data"]["children"][0]
+	reddit_posts = reddit_results["data"]["children"]
+	
+	
 	reddit_posts.each do |post|
-		title = reddit_posts["data"]["title"]
-		upvotes = reddit_posts["data"]["ups"]
-		category = reddit_posts["data"]["subreddit"]
+		title = post["data"]["title"]
+		category = post["data"]["subreddit"]
+		upvotes = calculate_upvotes(post["data"]["ups"], title, category)
+
+		reddit_story = {title: title, upvotes: upvotes, category: category}
+		reddit_stories.push(reddit_story)
 	end
-	reddit_story = {title: title, upvotes: upvotes, category: category}
-	reddit_stories.push(reddit_story)
+	return reddit_stories
 end
 
 #Create a method to gather the Mashable stories, and save them in an array with hashes of story details
@@ -47,14 +50,17 @@ def find_mashable_stories
 	mashable_stories = []
 	mashable_data = RestClient.get('http://mashable.com/stories.json')
 	mashable_results = JSON.parse(mashable_data)
-	mashable_posts = mashable_results["new"][0]
+	mashable_posts = mashable_results["new"]
+
 	mashable_posts.each do |post|
-		title = mashable_posts["title"]
-		upvotes = mashable_posts["shares"]["total"]
-		category = mashable_posts["channel"]
+		title = post["title"]
+		category = post["channel"]
+  	upvotes = calculate_upvotes(post["shares"]["total"], title, category)
+
+		mashable_story = {title: title, upvotes: upvotes, category: category}
+		mashable_stories.push(mashable_story)
 	end
-	mashable_story = {title: title, upvotes: upvotes, category: category}
-	mashable_stories.push(mashable_story)
+	return mashable_stories
 end
 
 #Create a method to gather the digg stories, and save them in an array with hashes of story details
@@ -73,19 +79,25 @@ end
 # end
 
 #Create a method to display the stories in the proper format, using interpolation
-def display_stories(story)
-	puts "Title: #{story[:title]}, Category: #{story[:category]}, Upvotes: #{story[:upvotes]}"
+def display_stories(stories)
+	stories.each do |story|
+		puts "Title: #{story[:title]}, Category: #{story[:category]}, Upvotes: #{story[:upvotes]}"
+		puts
+  end
 end
 
 #Print the aggregated news stories
-puts "*" * 100
+puts "*" * 50
 puts "TEDDIT NEWS AGGREGATOR"
-puts "*" * 100
+puts "*" * 50
 puts
 puts "---Reddit Stories---"
 display_stories(find_reddit_stories)
+puts
 puts "---Mashable Stories---"
 display_stories(find_mashable_stories)
+puts
+puts "*" * 50
 #puts "---Digg Stories---"
 #display_stories(find_digg_stories)
 
