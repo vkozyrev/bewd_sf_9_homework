@@ -19,33 +19,49 @@ mashable_data = RestClient.get("http://mashable.com/stories.json")
 reddit_results = JSON.parse(reddit_data.body)
 mashable_results = JSON.parse(mashable_data.body)
 
-#Print out the title of each post
+# Calculate votes based on title
+def calculate_votes(original_votes, title)
+  votes = 1
+  if (title.to_s.include?("cat")) || (title.to_s.include?("meow")) || (title.to_s.include?("purr"))
+    votes = original_votes * 3
+  else
+    votes = original_votes
+  end
+  return votes
+end
+
+# Hash Reddit stories and put hashes in array
 reddit_posts = reddit_results["data"]["children"]
 reddit_hashes = []
 reddit_posts.each do |post|
   title = post["data"]["title"]
   category = post["data"]["subreddit"]
-  upvotes = post["data"]["ups"]
-  reddit_hash = {title: title, category: category, upvotes: upvotes}
+  votes = calculate_votes(post["data"]["ups"], title)
+  reddit_hash = {title: title, category: category, votes: votes}
   reddit_hashes.push(reddit_hash)
 end
 
-reddit_hashes.each do |hash|
-  puts "*" * 10
-  puts "Title: #{hash[:title]}\nUpvotes: #{hash[:upvotes]}\nCategory: #{hash[:category]}"
-end
-
+# Hash Mashable stories and put hashes in array
 mashable_posts = mashable_results["new"]
 mashable_hashes = []
 mashable_posts.each do |post|
   title = post["title"]
   category = post["channel"]
-  shares = post["shares"]["total"]
-  mashable_hash = {title: title, category: category, shares: shares}
+  votes = calculate_votes(post["shares"]["total"], title)
+  mashable_hash = {title: title, category: category, votes: votes}
   mashable_hashes.push(mashable_hash)
 end
 
+puts "TEDDIT FRONT PAGE"
+
+## Print Reddit stories
+reddit_hashes.each do |hash|
+  puts "*" * 10
+  puts "Title: #{hash[:title]}\nVotes: #{hash[:votes]}\nCategory: #{hash[:category]}"
+end
+
+## Print Mashable stories
 mashable_hashes.each do |hash|
   puts "*" * 10
-  puts "Title: #{hash[:title]}\nUpvotes: #{hash[:shares]}\nCategory: #{hash[:category]}"
+  puts "Title: #{hash[:title]}\nVotes: #{hash[:votes]}\nCategory: #{hash[:category]}"
 end
