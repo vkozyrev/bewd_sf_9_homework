@@ -10,10 +10,11 @@
 # => We've also provided a png file of the terminal output from the completed version. (This won't open in Sublime Text)
 # => Hint: Think before you code. Annotate code and comment out sections as you test different sections
 
-require_relative 'lib/building'
-require_relative 'lib/apartment'
-require_relative 'lib/person'
+require_relative 'lib/building' #Gives access to the building class by linking files
+require_relative 'lib/apartment' #Gives access to the building class by linking files
+require_relative 'lib/person' #Gives access to the building class by linking files
 require 'pry'
+require 'pry-byebug'
 
 ## First, define our methods
 
@@ -31,7 +32,7 @@ def create_apartment
   puts "How many bathrooms does apartment #{name} have?"
   apt_bathrooms = gets.to_i
 
-  Apartment.new(name, apt_sqft, apt_bedrooms, apt_bathrooms)
+  Apartment.new(name, apt_sqft, apt_bedrooms, apt_bathrooms) #When instances of a class are created, where are they stored?
 end
 
 def create_renter
@@ -48,6 +49,8 @@ def create_renter
   Person.new(name, credit_score, gender)
 end
 
+
+#Getting info from user; creating an instance of building based on their input
 def create_building
   puts "-----------New Building-----------"
   puts "What is the building's name?"
@@ -77,6 +80,7 @@ apt_count = gets.to_i
   puts "Is unit #{apartment.name} rented? (y)es (n)o"
   unit_rented = gets.strip
 
+#If apartment is rented, will ask for renter information
   if unit_rented == "y"
     apartment.renter = create_renter
     puts "Renter added successfully"
@@ -91,7 +95,7 @@ puts "What would you like to do next, (v)iew all apartments? (q)uit?"
 response = gets.strip
 
 if response == 'v'
-  building.view_apartments
+  building.view_apartments #instance of the class building; this is an instance method
 else
   puts "Thanks for using Ruby Building Manager"
 end

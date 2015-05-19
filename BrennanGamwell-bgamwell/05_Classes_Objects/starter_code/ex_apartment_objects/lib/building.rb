@@ -1,24 +1,26 @@
+require 'pry'
+require 'pry-byebug'
+
 #Building Class
 class Building
   attr_accessor :name, :address, :apartments
+  #hint apartments should be an array i.e @apartments = []
 
   def initialize(name, address)
-    @address = address
     @name = name
-    @apartments = []
+    @address = address
+    @apartments =  [ ]
   end
 
+#within an instance method the building knows itself
+#'self' is always assumed--self.apartments and apartments are the same **within the method**
   def view_apartments
-    puts "------------#{@name} Apartment List--------------"
-    @apartments.each do |apartment|
-      puts apartment
-      if apartment.is_occupied?
-        "The apartment is not available. Renter name: #{apartment.renter.name}" 
-      else
-        "This apartment is vacant"
-      end
-    end
+      apartments.each do |apartment|
+      puts "Apartment: #{apartment} \n"
+      puts "sqft: #{apartment.sqft} | bedrooms: #{apartment.bedrooms} | bathrooms: #{apartment.bathrooms} \n"
+      puts "This apartment is vacant" if apartment.not_occupied?
   end
+end
 
   def to_s
     "#{name} at #{address} has #{@apartments.count} apartments."
