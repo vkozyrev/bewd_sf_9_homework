@@ -79,7 +79,7 @@ apt_count = gets.to_i
 
   if unit_rented == "y"
     apartment.renter = create_renter
-    puts "Renter added successfully"
+    puts "Renter added successfully \n #{apartment.renter}"
 
     puts "How much is this unit rented for?"
     rent = gets.to_i
@@ -91,6 +91,7 @@ puts "What would you like to do next, (v)iew all apartments? (q)uit?"
 response = gets.strip
 
 if response == 'v'
+  puts "----------- #{building.name} Apartment List -----------"
   building.view_apartments
 else
   puts "Thanks for using Ruby Building Manager"
