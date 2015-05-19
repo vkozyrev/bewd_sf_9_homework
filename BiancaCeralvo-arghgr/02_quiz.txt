@@ -1,0 +1,11 @@
+1. cd
+2. git is a type of version control;
+GitHub is one of many git remotes.
+3. stores your stuff remotely using git
+4. git add [filename or .]
+5. 3) git push
+6. a fork is a copy of a repository
+7. it submits a request to a repository to
+pull your changes. allows code sharing while
+preventing accidental code pushes to a main
+repository
