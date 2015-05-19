@@ -12,7 +12,6 @@ class Person
     @city = city
   end
 
-
   #instance method - ONLY called by instances of Person
   def hey
     puts "Hey!!!! I'm #{@name}"
@@ -33,14 +32,16 @@ class Person
 
   #class method
   def self.create_person
-    p = Person.random_people
+    p = Person.random_people #self cannot call a method on self, so have to use "People" explicitly
     #random_people method returns an array - something like this ["Joe", "27", "San Francisco"
     Person.new(p[0], p[1], p[2])
   end
 end
 
+a_person = Person.create_person
+puts a_person.name, a_person.age, a_person.city
 
-person = Person.create_person
-puts person.name
-puts person.hey #calling this instance method 'hey' from above
-#lowercase variables are instance variables
+# person = Person.create_person
+# puts person.name
+# puts person.hey #calling this instance method 'hey' from above
+# #lowercase variables are instance variables

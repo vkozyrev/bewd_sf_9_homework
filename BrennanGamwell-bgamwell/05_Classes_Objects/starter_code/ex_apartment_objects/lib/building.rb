@@ -9,7 +9,7 @@ class Building
   def initialize(name, address)
     @name = name
     @address = address
-    @apartments =  [ ]
+    @apartments =  []
   end
 
 #within an instance method the building knows itself
