@@ -32,14 +32,6 @@ class Game
     next_move = gets.chomp.downcase
     if next_move == 'n'
       play
-    elsif next_move == 'u'
-      puts "Thanks for playing #{@player}, your best rank is #{@player.rank}\n"
-      print "Enter new Username: "
-      username = gets.chomp
-      player = Person.new(username)
-      # put code here to create a new game, and start it
-      game = Game.new(player)
-      play
     else
       puts "Thanks for playing #{@player}, your best rank is #{@player.rank}"
     end
