@@ -24,7 +24,7 @@ class SecretNumber # this class will generate our secret number for us
 end
 
 
-test = SecretNumber.new(50)
-puts test.secret_number
-puts test.top_number
+# test = SecretNumber.new(50)
+# puts test.secret_number
+# puts test.top_number
 

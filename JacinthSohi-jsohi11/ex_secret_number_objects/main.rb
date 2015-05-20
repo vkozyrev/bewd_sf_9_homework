@@ -44,15 +44,27 @@ require_relative 'lib/person'
 require_relative 'lib/secret_number'
 
 # put code here print a welcome message for your user
+puts
+puts "**********SECRETS, SECRETS, ARE SO FUN!**********"
+puts
 puts "Welcome to Secrets, Secrets Are So Fun! In this game, you're going to try to guess the secret number. Let's get started!"
+puts
 
 # put code here ask the user for their name, and save it
 puts "First, tell me your name."
 player_name = gets.strip
+puts
+
+puts "How difficult do you want to make this? Please the upper bound for guessing, and don't make it too easy by going low!"
+upper_limit_number = gets.strip
+puts
 
 puts "Great, thanks #{player_name}! Ready to get play? Here we go!"
+puts
+puts "*************"
+puts
 
 # put code here to create a new game, and start it
-
-new_game = Game.new(player_name, 50)
+player = Person.new(player_name)
+new_game = Game.new(player, upper_limit_number)
 new_game.play_game

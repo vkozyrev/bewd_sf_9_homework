@@ -57,6 +57,4 @@ class Game
 	end
 end
 
-# first_game = Game.new("Jacinth", 50)
-# first_game.play_game
 
