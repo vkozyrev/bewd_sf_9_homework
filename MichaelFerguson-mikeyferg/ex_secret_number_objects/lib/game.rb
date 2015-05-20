@@ -24,9 +24,7 @@ class Game
   end
 
   def start
-    if @guesses < 1
-      player.print_name
-    end
+    player.print_name if @guesses < 1
     pick_num
     puts "secret_num is #{secret_num}"
     puts "user_num is #{user_num}"
