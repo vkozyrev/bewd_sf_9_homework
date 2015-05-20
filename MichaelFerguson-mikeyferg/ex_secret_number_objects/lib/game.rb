@@ -11,7 +11,7 @@ class Game
   attr_accessor :secret_num, :user_num, :guesses, :player
 
   def initialize(player)
-    @secret_num = SecretNumber.new().rand_num
+    @secret_num = sec_num_generator
     @user_num = nil
     @guesses = 0
     @player = player
@@ -38,5 +38,11 @@ class Game
       puts "Too low.  Guess again."
       start
      end
+  end
+
+  private
+
+  def sec_num_generator
+    SecretNumber.new().rand_num
   end
 end
