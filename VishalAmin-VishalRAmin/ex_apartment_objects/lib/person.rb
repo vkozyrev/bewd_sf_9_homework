@@ -5,12 +5,9 @@ class Person
   attr_accessor :name, :credit_score, :gender
 
   def initialize(name,credit_score, gender)
-<<<<<<< HEAD
     @name = name
     @credit_score = credit_score
     @gender = gender
-=======
->>>>>>> fbca0300694c0e191694e6c9f0651a1a0caee6a2
   end
 
   def to_s
@@ -18,9 +15,6 @@ class Person
   end
 
 end
-<<<<<<< HEAD
 
-person = Person.new("Kisha", 800, "f")
+person = Person.new("Vish", 800, "M")
 puts person
-=======
->>>>>>> fbca0300694c0e191694e6c9f0651a1a0caee6a2
