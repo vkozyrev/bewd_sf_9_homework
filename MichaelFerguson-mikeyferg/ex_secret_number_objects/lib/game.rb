@@ -39,16 +39,6 @@ class Game
       puts "guesses is #{@@total_guesses}"
       # end testing
     compare_nums(@secret_num, @user_num)
-    # if @secret_num == @user_num
-    #    puts "Good guess #{player.name}.  You are correct.  The secret_number is #{secret_num}.  It took you #{@@total_guesses} guesses."
-    #    #puts "Total guesses ever in game- #{@@total_guesses}"
-    # elsif @secret_num < @user_num
-    #   puts "Too high.  Guess again"
-    #   start
-    # else
-    #   puts "Too low.  Guess again."
-    #   start
-    # end
   end
 
   def compare_nums(secret_num, user_num)
