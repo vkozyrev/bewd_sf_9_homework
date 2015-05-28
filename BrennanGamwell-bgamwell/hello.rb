@@ -1,5 +1,1 @@
-def hello
-  "puts Hello"
-end
-
-hello
+puts 1+2
