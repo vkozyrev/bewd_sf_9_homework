@@ -32,7 +32,7 @@ Weekly Homework
 **Submit homework by pushing to your bewd_sf_9_homework repo, then submit a pull request**
 
 | Homework # | Assignment | Class Topic |
-| ---------- | :--------: | ----------- |
+| :--------: | :--------: | ----------- |
 | 2          | `fizzbuzz.rb`, `ex_teddit_conditional.rb` | [02_Variables_Conditionals](https://github.com/ga-students/bewd_sf_9/tree/master/02_Variables_Conditionals/starter_code)
 | 3          | `ex_teddit_basic.rb` | [03_Collections_Loops](https://github.com/ga-students/bewd_sf_9/tree/master/03_Collections_Loops)
 | 4          | `ex_teddit_api_news.rb` | [04_Collections_APIs](https://github.com/ga-students/bewd_sf_9/tree/master/04_Collections_APIs)
