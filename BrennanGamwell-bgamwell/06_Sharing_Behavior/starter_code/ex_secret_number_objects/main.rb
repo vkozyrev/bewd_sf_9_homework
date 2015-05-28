@@ -29,8 +29,8 @@
 # Game
 #	This class holds most of the game logic and should:
 #		Welcome players and inform them of the game rules.
-#		Initialize the Player class.
-# 		Initialize the Secret Number class.
+#		Initialize the Player class. - instantiate a player
+#   Initialize the Secret Number class. - instantiate the secret number game
 # 		Prompt the user to choose a number, verify if the user guessed correctly.
 #     Use gets.strip and == it to the secret number
 # 		If the user guesses incorrectly let them know if they were too high or too low.
@@ -42,9 +42,51 @@
 # Tips: Copy paste your code from homework 1 where necessary.
 require 'pry'
 require 'pry-byebug'
-require_relative 'lib/game'
+# require_relative 'lib/game.rb'
 require_relative 'lib/person'
 require_relative 'lib/secret_number'
+require_relative 'lib/game'
+
+puts "Welcome to the secret number game! \n This game was created by Brennan Gamwell for BEWD-SF 9 at General Assembly. \n Have fun!"
+
+def get_new_person
+  puts "Tell us your name so we know who's playing."
+
+  new_person = gets.strip
+
+  puts "Awesome, thank you #{new_person}!"
+
+  current_player = Person.new(new_person) #This creates a new class of player for the game
+
+  puts "Get ready to have more fun than you've ever had in your life, #{new_person}."
+end
+
+def new_game
+  puts "Make your guess!"
+
+  player_guess = gets.strip.to_i
+
+  guess = Game.new(player_guess)
+  return guess
+
+end
+
+get_new_person #calls the method get_new_person
+
+puts "*****Now it's time to play!*****"
+
+new_guess = new_game #calling an instance of a new game
+
+secret_number = SecretNumber.create_number_instance
+
+if new_guess == secret_number
+  puts "Congrats, you did it!"
+elsif
+  new_guess > secret_number
+  puts "You guessed too high!"
+elsif new_guess < secret_number
+  puts "You guessed too low. Try again!"
+end
 
 # put code here print a welcome message for your user
 #	The main class is where the game begins. This class should tell the player who made it.
