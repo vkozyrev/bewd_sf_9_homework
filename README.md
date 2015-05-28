@@ -30,6 +30,7 @@ Weekly Homework
 ----------------
 
 **Submit homework by pushing to your bewd_sf_9_homework repo, then submit a pull request**
+Homework is always due before the next class. Monday homeworks will usually be light, and Wednesday homeworks will usually be projects.
 
 | Homework # | Assignment | Class Topic |
 | :--------: | :--------: | ----------- |
