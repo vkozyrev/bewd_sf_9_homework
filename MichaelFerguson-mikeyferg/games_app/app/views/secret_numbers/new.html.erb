@@ -1,0 +1,19 @@
+<h1>Welcome to Secret Number!</h1>
+
+<p>To play this game, all you have to do is guess a number. If you guess the <u>secret number</u>, you win!</p>
+
+<p>Choose carefully... you only get one try!</p>
+
+<br/>
+
+<h2>Pick a number:<h2>
+
+<% @computer_guesses.each do |number| %>
+  <% if number == 0 %>
+    <%= link_to image_tag("rock_paper_scissors/rock.jpg"), rps_game_path(number) %>
+  <% elsif number == 1 %>
+    <%= link_to image_tag("rock_paper_scissors/paper.jpg"), rps_game_path(number) %>
+  <% elsif number == 2 %>
+    <%= link_to image_tag("rock_paper_scissors/scissors.jpg"), rps_game_path(number) %>
+  <% end %>
+<% end %>
