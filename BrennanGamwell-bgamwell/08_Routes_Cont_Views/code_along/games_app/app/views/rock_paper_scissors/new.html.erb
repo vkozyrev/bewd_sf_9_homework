@@ -1,0 +1,11 @@
+<h1>Welcome to Rock Paper Scissors!</h1>
+
+<p>Choose your tool carefully--you don't want to lose to a computer!</p>
+
+<h2>Pick your tool:</h2>
+
+<% @computer_tools.each do |tool| %>
+  <%= link_to image_tag("rock_paper_scissors/#{tool}.jpg"), rock_paper_scissor_path(tool) %>
+<% end %>
+
+<!-- paper = 1; rock = 2; scissors = 3 -->
