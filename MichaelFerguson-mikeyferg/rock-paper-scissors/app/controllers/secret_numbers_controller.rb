@@ -17,6 +17,6 @@ class SecretNumbersController < ApplicationController
   end
 
   def is_winner?
-    @secret_number == @chose_number
+    @secret_number == @chosen_number
   end
 end

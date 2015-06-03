@@ -1,33 +1,26 @@
 class RpsGamesController < ApplicationController
   def new
-  @computer_guesses = computer_guesses
-
+    @choices = choices
   end
 
   def show
-    @computer_guess = computer_guesses.sample
-    @player_pick = params[:id].to_i
+    @computer_guess = choices.sample
+    #@player_pick = params[:id].to_i
+    @player_pick = choices[params[:id].to_i]
     @winner = is_winner?
   end
 
 
-  # def image(number)
-  #   if number == 0
-  #     link_to image_tag("rock_paper_scissors/rock.jpg"), rps_game_path(number)
-  #   elsif number == 1
-  #     link_to image_tag("rock_paper_scissors/paper.jpg"), rps_game_path(number)
-  #   elsif number == 2
-  #     link_to image_tag("rock_paper_scissors/scissors.jpg"), rps_game_path(number)
-  #   end
-  # end
-
   private
-
-  def computer_guesses
-    (0..2).to_a
+  def choices
+    [{number: 0, image_link: "rock_paper_scissors/rock.jpg"}, {number: 1, image_link: "rock_paper_scissors/paper.jpg"}, {number: 2, image_link: "rock_paper_scissors/scissors.jpg"}]
   end
 
   def is_winner?
-    @computer_guess == @player_pick
+    if @computer_guess == @player_pick
+      "win"
+    else
+      "lose"
+    end
   end
 end

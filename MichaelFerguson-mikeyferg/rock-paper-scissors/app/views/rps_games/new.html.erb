@@ -7,12 +7,6 @@
 <h2>Chose Rock, Paper or Scissors:<h2>
 
 
-  <% @computer_guesses.each do |number| %>
-    <% if number == 0 %>
-      <%= link_to image_tag("rock_paper_scissors/rock.jpg"), rps_game_path(number) %>
-    <% elsif number == 1 %>
-      <%= link_to image_tag("rock_paper_scissors/paper.jpg"), rps_game_path(number) %>
-    <% elsif number == 2 %>
-      <%= link_to image_tag("rock_paper_scissors/scissors.jpg"), rps_game_path(number) %>
-    <% end %>
-  <% end %>
+ <% @choices.each do |choice| %>
+     <%= link_to image_tag(choice[:image_link]), rps_game_path(choice[:number]) %>
+ <% end %>

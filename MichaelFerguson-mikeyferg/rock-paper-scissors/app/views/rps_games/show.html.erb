@@ -1,16 +1,27 @@
-<h1>Testing</h4>
+<h1>Results</h4>
 
 
-<%= "You picked #{@player_pick}" %>
+<%= "You picked" %>
+</br>
+<%= image_tag(@player_pick[:image_link]) %>
+</br>
 </br>
 
 
 
-
-<%= "The computer picked #{@computer_guess}" %>
+<%= "The computer picked" %>
+</br>
+<%= image_tag(@computer_guess[:image_link]) %>
 </br>
 
-<%= "You #{@winner}" %>
 
+
+<% if @winner == 'win' %>
+  <%= render 'win' %>
+<% else %>
+  <%= render 'lose' %>
+<% end %>
+
+</br>
 </br>
 <%=link_to "Let's play a new game", new_rps_game_path %>
