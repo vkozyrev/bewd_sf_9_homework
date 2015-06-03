@@ -1,0 +1,13 @@
+<h1>Welcome to Secret Number!</h1>
+
+<p>To play this game, all you have to do is play a hand. If your hand beats the computer's hand, you win!</p>
+
+<p>Choose carefully... you only get one try!</p>
+
+<br/>
+
+<h2>Pick a hand:<h2>
+
+<% @hands.each do |hand| %>
+  <%= link_to image_tag("rock_paper_scissors/#{hand[:image]}"), rock_paper_scissor_path(hand[:id]) %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Sorry, you lose...</h1>
+<h4>Your hand was <%=@chosen_hand[:name]%></h4>
+<%= image_tag("rock_paper_scissors/#{@chosen_hand[:image]}") %>
+<h4>The secret hand was <%=@secret_hand[:name]%></h4>
+<%= image_tag("rock_paper_scissors/#{@secret_hand[:image]}") %>
+<p><%= image_tag 'games/loser.gif' %></p>
