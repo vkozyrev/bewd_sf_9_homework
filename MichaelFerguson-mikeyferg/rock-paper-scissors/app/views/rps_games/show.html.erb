@@ -13,13 +13,14 @@
 </br>
 <%= image_tag(@computer_guess[:image_link]) %>
 </br>
-
-
+</br>
 
 <% if @winner == 'win' %>
   <%= render 'win' %>
-<% else %>
+<% elsif @winner == 'lose' %>
   <%= render 'lose' %>
+<% elsif @winner == "tie" %>
+  <%= render 'tie' %>
 <% end %>
 
 </br>
