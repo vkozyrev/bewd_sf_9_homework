@@ -41,7 +41,7 @@ Homework is always due before the next class. Monday homeworks will usually be l
 | 6          | Secret Number: `main.rb`, `/lib/game.rb`, `/lib/secret_number.rb`, `person.rb` | [06_Sharing_Behavior](https://github.com/ga-students/bewd_sf_9/tree/master/06_Sharing_Behavior) |
 | 7          | Blog in Holiday Homework link | [07_First_Rails_App](https://github.com/ga-students/bewd_sf_9/tree/master/07_First_Rails_App) |
 | 8          | `/rockpaperscissors/rock_paper_scissors.rb` | [08_Routes_Cont_Views](https://github.com/ga-students/bewd_sf_9/tree/master/08_Routes_Cont_Views) |
-| 9          |            | []() |
+| 9          |            | [09_Project_Proposal_Kickoff](https://github.com/ga-students/bewd_sf_9/tree/master/09_Project_Proposal_Kickoff) |
 | 10         |            | []() |
 
 
