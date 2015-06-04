@@ -1,0 +1,19 @@
+<body bgcolor = #29527A>
+<center> <font face = "arial" color = #FF8484>
+  <h1>Welcome to Rock Paper Scissors!</h1>
+</font>
+
+<font face = "arial" color = "white">
+  <p>To play this game, all you have to do is choose rock, paper, or scissors.</p>
+
+  <p>Choose carefully... </p>
+
+  <br/>
+
+  <h2>Pick a throw:<h2>
+
+    <% @throws.each_with_index do |throw, index| %>
+      <%= link_to image_tag("rock_paper_scissors/#{throw}.jpg"), rock_paper_scissor_path(index) %>
+    <% end %>
+</center></font>
+</body>
