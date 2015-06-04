@@ -1,0 +1,20 @@
+<h1>Welcome to Rock Paper Scissors!</h1>
+
+<p>To play this game, all you have to do is to choose rock, paper or scissors</p>
+
+<ul>
+  <li>Rock bits Scissors, but looses to Paper</li>
+  <li>Scissors bits Paper, but looses to Rock</li>
+  <li>Paper bits Rock, but looses to Scissors</li>
+  <li>The same items tie</li>
+</ul>
+
+<br/>
+
+<h2>Pick your weapon:<h2>
+
+<div class="flex-container">
+  <% @items.each do |item| %>
+    <%= link_to image_tag("rock_paper_scissors/#{item}.jpg"), rock_paper_scissor_path(item), class: "round scale" %>
+  <% end %>
+</div>
