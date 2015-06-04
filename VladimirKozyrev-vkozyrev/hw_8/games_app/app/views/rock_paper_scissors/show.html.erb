@@ -1,0 +1,11 @@
+<% if @result == 0 %>
+  <%= render 'tie' %>
+<% elsif @result == -1 %>
+  <%= render 'lose' %>
+ <% elsif @result == 1 %>
+   <%= render 'win' %>
+<% end %>
+
+<p>
+  <h3><%= link_to "LET's PLAY AGAIN!", new_rock_paper_scissor_path %></h3>
+</p>
