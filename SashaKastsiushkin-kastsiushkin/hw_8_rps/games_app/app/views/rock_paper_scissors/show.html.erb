@@ -1,0 +1,13 @@
+<div class="flex-container">
+  <%= image_tag "rock_paper_scissors/#{@my_item}.jpg", class: "round" %>
+  >>>
+  <%= image_tag "rock_paper_scissors/#{@opponent_item}.jpg", class: "round" %>
+</div>
+
+<div class="">
+  <%= render @result %>
+</div>
+
+<div class="flex-container">
+  <%= link_to "Play Again", new_rock_paper_scissor_path %>
+</div>

@@ -1,0 +1,12 @@
+<% if @winner %>
+  <%= render 'win' %>
+<% else %>
+  <%= render 'lose' %>
+<% end %>
+
+<p>
+  Secret = <%= @secret_number %>
+  chosen = <%= @chosen_number %>
+  winner = <%= @winner %>
+  <h3><%= link_to "LET's PLAY AGAIN!", new_secret_number_path %></h3>
+</p>

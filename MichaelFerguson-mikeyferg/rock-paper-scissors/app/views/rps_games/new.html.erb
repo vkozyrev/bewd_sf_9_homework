@@ -1,0 +1,12 @@
+<h1>Welcome to Rock, Paper, Scissors!</h1>
+
+<p>To play this game, all you have to do is select rock, paper or scissors.  Following traditional rules, if you beat the computers pick, you win!</p>
+
+<br/>
+
+<h2>Chose Rock, Paper or Scissors:<h2>
+
+
+ <% @choices.each do |choice| %>
+     <%= link_to image_tag(choice[:image_link]), rps_game_path(choice[:number]) %>
+ <% end %>

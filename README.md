@@ -41,9 +41,18 @@ Homework is always due before the next class. Monday homeworks will usually be l
 | 6          | Secret Number: `main.rb`, `/lib/game.rb`, `/lib/secret_number.rb`, `person.rb` | [06_Sharing_Behavior](https://github.com/ga-students/bewd_sf_9/tree/master/06_Sharing_Behavior) |
 | 7          | Blog in Holiday Homework link | [07_First_Rails_App](https://github.com/ga-students/bewd_sf_9/tree/master/07_First_Rails_App) |
 | 8          | `/rockpaperscissors/rock_paper_scissors.rb` | [08_Routes_Cont_Views](https://github.com/ga-students/bewd_sf_9/tree/master/08_Routes_Cont_Views) |
-| 9          |            | []() |
-| 10         |            | []() |
-
+| 9          | Finish up any missing homework | [09_Project_Proposal_Kickoff](https://github.com/ga-students/bewd_sf_9/tree/master/09_Project_Proposal_Kickoff) |
+| 10         | Start RetFlix from `movie_app_part_1.md`. Your models, views and controllers should be working in your index to view all available movies in your db | [10_Model_Active_Record](https://github.com/ga-students/bewd_sf_9/tree/master/10_Model_Active_Record) |
+| 11         |            | Model: Associations & Validations |
+| 12         |            | Front-end: Views, Forms & Boostrap |
+| 13         |            | Project Kickoff, Front-end: Boostrap, Authentication & Authorization |
+| 14         |            | - |
+| 15         |            | - |
+| 16         |            | - |
+| 17         |            | - |
+| 18         |            | - |
+| 19         |            | Heroku Deployment |
+| 20         |            | Final Project Presentations! |
 
 
 

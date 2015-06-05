@@ -1,0 +1,12 @@
+<% if @outcome == "win" %>
+  <%= render 'win' %>
+<% elsif @outcome == "lose" %>
+  <%= render 'lose' %>
+<% else %>
+    <%= render 'tie' %>
+<% end %>
+
+<center><font face = "arial"><p>
+  <h3><%= link_to "Dare to play again?", new_rock_paper_scissor_path %></h3>
+</font></p>
+</center>
