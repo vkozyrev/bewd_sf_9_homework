@@ -1,0 +1,14 @@
+<% if @winner %>
+  <%= render 'win' %>
+<% elsif @tie %>
+  <%= render 'tie' %>
+<% else %>
+  <%= render 'lose' %>
+<% end %>
+
+<p>
+  <h3><%= link_to "LET'S PLAY AGAIN!", new_rock_paper_scissor_path %></h3>
+</p>
+
+
+<!-- paper = 1; rock = 2; scissors = 3 -->
