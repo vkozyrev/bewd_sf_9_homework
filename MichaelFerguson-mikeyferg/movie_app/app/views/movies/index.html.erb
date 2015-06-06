@@ -1,0 +1,8 @@
+<h1 style="color:#cc3333;">Welcome to Retflix!</h1>
+<h3>Here is a list of all of our movies!</h3>
+
+<% @movies.each do |movie| %>
+<ul> <%=link_to "#{movie.name}", movie_path(movie) %> </ul>
+<% end %>
+
+<h2><%=link_to "Create a new Movie", new_movie_path, class: 'btn btn-lg btn-danger' %></h2>
