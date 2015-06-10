@@ -1,0 +1,34 @@
+<h1><%= @movie.title %> </h1>
+
+<p>
+  <b>Description:</b><br />
+  <%= @movie.description %>
+</p>
+<p>
+  <b>Year released:</b> <%= @movie.date_released %>
+</p>
+<p>
+  <b>Rating:</b> <%= render "shared/rating", rating: @movie.medium_rating %>
+</p>
+
+<p><b>Reviews:</b></p>
+<% if @movie.reviews.length > 0 %>
+  <ul class="list-unstyled">
+    <% @movie.reviews.each do |review| %>
+    <li>
+      <%= link_to edit_review_path(review) do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+      <%= link_to review, method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-remove text-danger"></i>
+      <% end %>
+      <%= review.review %><br />
+      <%= render "shared/rating", rating: review.rating %><br />
+      <span class="label label-primary"><%= review.created_at.to_s(:short) %></span>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+<p>Be the first one to leave a review!</p>
+<% end %>
+<%= link_to "Add a review", new_review_path(:movie_id => @movie.id), class: "btn btn-primary" %>

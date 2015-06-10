@@ -1,0 +1,32 @@
+<h1>Reviews</h1>
+
+<% if @reviews.length > 0  %>
+<table class="table table-striped table-hover">
+  <tr>
+    <th class="col-md-2 text-center">Title</th>
+    <th class="col-md-5 text-center">Review</th>
+    <th class="col-md-1 text-center">Rating</th>
+    <th class="col-md-2 text-center">Date</th>
+    <th class="col-md-2 text-center"></th>
+  </tr>
+  <% @reviews.each do |review| %>
+  <tr>
+    <td><%= link_to "#{review.movie.title}", movie_path(review.movie.id) %></td>
+    <td><%= review.review %></td>
+    <td class="text-center">
+      <%= render "shared/rating", rating:  review.rating %>
+    </td>
+    <td class="text-center"><%= review.created_at.to_s(:short) %></td>
+    <td class="text-right">
+      <%= link_to "Edit", edit_review_path(review.id), class: "btn btn-sm btn-warning" %>
+      <%= link_to "Delete", review, method: :delete, data: { confirm: "You sure?" },  class: "btn btn-sm btn-danger" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<div class="col-md-12">
+  <p class="text-center">There are no reviews yet!</p>
+  <p class="text-center"><%= link_to "Add first review!", new_review_path %></p>
+</div>
+<% end %>
