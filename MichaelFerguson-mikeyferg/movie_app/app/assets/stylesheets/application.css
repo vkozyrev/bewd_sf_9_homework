@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ .table > tbody > tr > td {
+     vertical-align: middle;
+}
