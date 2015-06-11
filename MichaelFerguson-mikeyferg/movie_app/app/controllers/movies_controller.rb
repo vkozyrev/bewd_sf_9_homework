@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     @movie.save
     redirect_to movies_path
   end
-  
+
   def edit
     @movie = find_movie
   end
