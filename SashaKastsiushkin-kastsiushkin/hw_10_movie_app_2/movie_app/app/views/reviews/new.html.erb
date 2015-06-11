@@ -1,0 +1,8 @@
+<h1>Add new review</h1>
+
+<%= simple_form_for @review, :html => {:class => "col-md-6 col-md-offset-3"} do |f| %>
+  <%= f.association :movie, as: :hidden, prompt: "Select a movie" %>
+  <%= f.input :rating, as: :select, collection: 1..5, prompt: "Select your rating" %>
+  <%= f.input :review %>
+  <%= f.submit "Add Review", :class => 'btn btn-primary btn-block' %>
+<% end %>
