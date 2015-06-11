@@ -1,0 +1,7 @@
+<h1>Add a new Review</h1>
+<%= simple_form_for @review do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.hidden_field :movie_id, :value => @review.movie_id %>
+  <%= f.button :submit %>
+<% end %>
