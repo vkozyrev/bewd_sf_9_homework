@@ -44,7 +44,7 @@ Homework is always due before the next class. Monday homeworks will usually be l
 | 9          | Finish up any missing homework | [09_Project_Proposal_Kickoff](https://github.com/ga-students/bewd_sf_9/tree/master/09_Project_Proposal_Kickoff) |
 | 10         | Start RetFlix from `movie_app_part_1.md`. Your models, views and controllers should be working in your index to view all available movies in your db | [10_Model_Active_Record](https://github.com/ga-students/bewd_sf_9/tree/master/10_Model_Active_Record) |
 | 11         |  music_app: due Wednesday, June 17th  | Model: Associations & Validations |
-| 12         |            | Front-end: Views, Forms & Boostrap |
+| 12         |  Continue working on music_app, use Bootstrap to style your views | Front-end: Views, Forms & Boostrap |
 | 13         |            | Project Kickoff, Front-end: Boostrap, Authentication & Authorization |
 | 14         |            | - |
 | 15         |            | - |
