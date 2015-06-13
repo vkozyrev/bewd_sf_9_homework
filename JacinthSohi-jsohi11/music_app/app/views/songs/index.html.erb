@@ -4,7 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Year Released</th>
-    <th>Artist</th>
     <th>Actions</th>
   </tr>
  
@@ -12,16 +11,10 @@
     <tr>
       <td class="col-md-1"><%= song.title %></td>
       <td class="col-md-1"><%= song.year_released %></td>
-      <td class="col-md-4">
-      	    <% song.artists.each do |artist| %>
-      		<ul><%=artist.lname %></ul>
-      	<%end %>
-
-      </td>
       <td class="col-md-2">
-      	<%=link_to "Learn More", artist_path(artist), class: 'btn btn-xs btn-danger' %>
-      	<%=link_to "Edit", edit_artist_path(artist), class: 'btn btn-xs btn-default' %>
-      	<%=link_to "Delete", artist, method: :delete, data: {confirm: "Do you really want to remove this artist?"}, class: 'btn btn-xs btn-default' %>
+      	<%=link_to "Learn More", song_path(song), class: 'btn btn-xs btn-danger' %>
+      	<%=link_to "Edit", edit_song_path(song), class: 'btn btn-xs btn-default' %>
+      	<%=link_to "Delete", [song.artist, song], method: :delete, data: {confirm: "Do you really want to remove this song?"}, class: 'btn btn-xs btn-default' %>
       </td>
     </tr>
   <% end %>

@@ -25,7 +25,7 @@ def update
 	@artist = Artist.find(params[:id])
 
 	if @artist.update(artist_params)
-		redirect_to @article
+		redirect_to @artist
 	else
 		render 'edit'
 	end
