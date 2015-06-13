@@ -45,7 +45,7 @@ end
 private
 
 def artist_params
-	params.require(:artist).permit(:fname, :lname, :bio)
+	params.require(:artist).permit(:fname, :lname, :bio, :artist_image)
 end
 
 end
