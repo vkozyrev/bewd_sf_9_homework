@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'about', to: "static_pages#about"
-  get 'songs', to: "static_pages#songs"
   get 'home', to: "static_pages#home"
 
   resources :artists, :songs
   root 'static_pages#home'
-  
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
