@@ -11,7 +11,8 @@ end
 def create
   @song = Song.new(song_params)
   if @song.save
-    redirect_to song_path(@song) #i want redirect_to to artist
+    @artist = @song.artist
+    redirect_to artist_path(@artist)
   else
     render :new
   end

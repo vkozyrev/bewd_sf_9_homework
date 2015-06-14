@@ -1,7 +1,7 @@
 <div style="font-family: 'Open Sans', sans-serif;">
 <%= simple_form_for @song do |f| %>
-	<%= f.input :title %>
-	<%= f.input :year_released %>
+	<%= f.input :title, label: "Title" %>
+	<%= f.input :year_released, label: "Year released" %>
 	<%= f.association :artist, :label_method => lambda { |artist| "#{artist.fname}  #{artist.lname}" }, value_method: :id, include_blank: false, prompt: "Select an artist" %>
 	<%= f.button :submit%>
 <% end %>

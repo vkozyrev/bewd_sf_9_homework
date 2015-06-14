@@ -1,9 +1,10 @@
 <div style="font-family: 'Open Sans', sans-serif;">
 <%= simple_form_for @artist do |f| %>
-	<%= f.input :fname %>
-	<%= f.input :lname %>
-	<%= f.input :bio %>
-	<%= f.input :artist_image %>
+	<%= f.input :fname, label: "First/group name" %>
+	<%= f.input :lname, label: "Last name" %>
+	<%= f.input :bio, label: "Bio" %>
+	<%= f.association :record_label, :label_method => lambda { |record_label| "#{record_label.label_name}" }, value_method: :id, include_blank: false, prompt: "Select a record label" %>
+	<%= f.input :artist_image, label: "Artist image", placeholder: "Link to artist image" %>
 	<%= f.button :submit%>
 <% end %>
 </div>
