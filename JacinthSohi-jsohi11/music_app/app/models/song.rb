@@ -12,5 +12,5 @@
 
 class Song < ActiveRecord::Base
 	belongs_to :artist
-	validates_presence_of :title, :year_released
+	validates_presence_of :title, :year_released, :song_url
 end

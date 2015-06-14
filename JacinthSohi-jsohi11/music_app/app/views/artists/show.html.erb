@@ -48,7 +48,11 @@
   </tr>
 <% @artist.songs.each do |song| %>
     <tr>
-      <td><img src='http://lizkhoo.com/content/play-icon.png' width="30px" height="30px"></td>
+      <td class="col-md-1">
+        <%= link_to "#{song.song_url}", target: "_blank" do %>
+        <%= image_tag("http://lizkhoo.com/content/play-icon.png", :alt => "play", width: '30', height: '30') %>
+        <% end %>
+      </td>
       <td><%= song.title %></td>
       <td><%= song.year_released %></td>
     </tr>

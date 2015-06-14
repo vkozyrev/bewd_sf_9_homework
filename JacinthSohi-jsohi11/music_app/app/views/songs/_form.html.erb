@@ -3,6 +3,7 @@
 	<%= f.input :title, label: "Title" %>
 	<%= f.input :year_released, label: "Year released" %>
 	<%= f.association :artist, :label_method => lambda { |artist| "#{artist.fname}  #{artist.lname}" }, value_method: :id, include_blank: false, prompt: "Select an artist" %>
+	<%= f.input :song_url, label: "Song URL", placeholder: "Link to song" %>
 	<%= f.button :submit%>
 <% end %>
 </div>

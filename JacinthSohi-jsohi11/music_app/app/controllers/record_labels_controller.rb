@@ -1,5 +1,7 @@
 class RecordLabelsController < ApplicationController
 
+	http_basic_authenticate_with name: "bewd", password: "bewd", except: [:index, :show]
+
 	def index
 		@record_labels = RecordLabel.all
 	end
