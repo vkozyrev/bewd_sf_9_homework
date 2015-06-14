@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: songs
+#
+#  id            :integer          not null, primary key
+#  title         :string
+#  year_released :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  artist_id     :integer
+#
+
 require 'test_helper'
 
 class SongTest < ActiveSupport::TestCase

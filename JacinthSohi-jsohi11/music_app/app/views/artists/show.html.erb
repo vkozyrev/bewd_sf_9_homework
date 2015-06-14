@@ -1,5 +1,21 @@
 <div style="font-family: 'Open Sans', sans-serif;">
+
+<!--Info about the artist-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Artist Information</h3>
+  </div>
+  <div class="panel-body">  
+
+<div class="row">
+<div class="col-md-10">
 <h2><%= @artist.fname %> <%= @artist.lname %></h2>
+</div>
+
+<div class="col-md-2">
+<%=link_to "Edit artist info", edit_artist_path, class: 'btn btn-xs btn-default' %>
+</div>
+</div>
 <br />
 <div class="row">
   <div class="col-md-2">
@@ -11,19 +27,31 @@
   	</p>
   </div>
 </div>
+</div>
+</div>
 <br />
-<h3>Songs</h3>
+
+<!--Display the table of songs -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Songs</h3>
+  </div>
+  <div class="panel-body"> 
 <table class="table table-striped table-hover">
   <tr>
+    <th>Listen</th>
     <th>Title</th>
     <th>Year Released</th>
   </tr>
 <% @artist.songs.each do |song| %>
     <tr>
+      <td><img src='http://lizkhoo.com/content/play-icon.png' width="30px" height="30px"></td>
       <td><%= song.title %></td>
       <td><%= song.year_released %></td>
     </tr>
   <% end %>
 </table>
-<p> <%=link_to "Add a song", new_artist_song_path(@artist), class: 'btn btn-md btn-default' %> </p>
+<p> <%=link_to "Add a song", new_song_path, class: 'btn btn-md btn-default' %> </p>
+</div>
+</div>
 </div>

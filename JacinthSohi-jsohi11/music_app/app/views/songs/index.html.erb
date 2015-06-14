@@ -1,7 +1,9 @@
 <div style="font-family: 'Open Sans', sans-serif;">
+  <p> <%=link_to "Add a song", new_song_path, class: 'btn btn-md btn-default' %> </p>
 <div class="col-md-12">
 <table class="table table-striped table-hover">
   <tr>
+    <th>Listen</th>
     <th>Title</th>
     <th>Year Released</th>
     <th>Actions</th>
@@ -9,12 +11,13 @@
  
   <% @songs.each do |song| %>
     <tr>
-      <td class="col-md-1"><%= song.title %></td>
+      <td class="col-md-1"><img src='http://lizkhoo.com/content/play-icon.png' width="30px" height="30px"></td>
+      <td class="col-md-4"><%= song.title %></td>
       <td class="col-md-1"><%= song.year_released %></td>
       <td class="col-md-2">
       	<%=link_to "Learn More", song_path(song), class: 'btn btn-xs btn-danger' %>
       	<%=link_to "Edit", edit_song_path(song), class: 'btn btn-xs btn-default' %>
-      	<%=link_to "Delete", [song.artist, song], method: :delete, data: {confirm: "Do you really want to remove this song?"}, class: 'btn btn-xs btn-default' %>
+      	<%=link_to "Delete", song_path(song), method: :delete, data: {confirm: "Do you really want to remove this song?"}, class: 'btn btn-xs btn-default' %>
       </td>
     </tr>
   <% end %>
