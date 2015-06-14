@@ -1,3 +1,21 @@
 <div style="font-family: 'Open Sans', sans-serif;">
-<h1>Showing the page for <%= @record_label.label_name %></h1>
+<h1><%= @record_label.label_name %></h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Artists</h3>
+  </div>
+  <div class="panel-body"> 
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name/Group</th>
+  </tr>
+<% @record_label.artists.each do |artist| %>
+    <tr>
+      <td><%= artist.fname %> <%= artist.lname %></td>
+    </tr>
+  <% end %>
+</table>
+<p> <%=link_to "Add an artist", new_artist_path, class: 'btn btn-md btn-default' %> </p>
+</div>
+</div>
 </div>

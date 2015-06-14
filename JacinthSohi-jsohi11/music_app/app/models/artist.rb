@@ -14,5 +14,5 @@
 class Artist < ActiveRecord::Base
 	has_many :songs, dependent: :destroy
 	belongs_to :record_label
-	validates_presence_of :fname, :bio
+	validates_presence_of :fname, :bio, :record_label
 end
