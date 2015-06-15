@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
 
 body {
     padding-top: 50px;
@@ -11,6 +12,12 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
+
+h1 { 
+	font-family: 'Poiret One', cursive;
+	color: white;
+
+ }
 
 
 
