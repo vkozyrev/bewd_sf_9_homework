@@ -19,5 +19,34 @@ h1 {
 
  }
 
+.padded-bottom{
+	padding-bottom: 15px !important;
+}
+
+.panel-transparent {
+    background: none;
+    border: none;
+}
+
+.panel-transparent .panel-heading{
+	font-family: 'Poiret One', cursive;
+    background: #222 !important;
+    border: #090909 !important;
+    color: #9d9d9d !important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(225, 225, 225, 0.5)!important;
+}
+
+.panel-transparent .table{
+    background: rgba(225, 225, 225, 0.5)!important;
+}
+
+.panel-transparent .table th{
+    background: rgba(225, 225, 225, 0.6)!important;
+    border: none;
+}
+
 
 
