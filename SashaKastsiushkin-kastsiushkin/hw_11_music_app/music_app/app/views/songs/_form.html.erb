@@ -1,0 +1,6 @@
+<%= simple_form_for @song, :html => {:class => "col-md-6 col-md-offset-3"} do |f| %>
+  <%= f.input :name %>
+  <%= f.input :album %>
+  <%= f.input :artist_id, as: :hidden %>
+  <%= f.submit "#{button_text}", :class => 'btn btn-primary btn-block' %>
+<% end %>
