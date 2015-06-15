@@ -2,9 +2,9 @@ class SongsController < ApplicationController
 
   http_basic_authenticate_with name: "bewd", password: "bewd", except: [:index, :show]
 
-  def index
-  	@songs = Song.all
-  end
+def index
+  @songs = Song.all
+end
 
   def new
   	@song = Song.new

@@ -53,5 +53,34 @@ h1 {
     color: #ffffff !important;
 }
 
+.simple_form label {
+    color: #ffffff
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #330066;
+  border-color: #330066;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+  background-color: #330066 !important;
+  border-color: #330066 !important;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #330066 !important;
+  border-color: #330066 !important;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #330066 !important;
+  border-color: #330066 !important;
+}
+
 
 
