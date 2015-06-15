@@ -1,0 +1,6 @@
+<h1>Add Your Favorite Artist</h1>
+
+<%= form_for @artist do |f| %>
+<ul>Artist: <%= f.text_field :name %></ul>
+<ul><%= f.submit %></ul>
+<% end %>
