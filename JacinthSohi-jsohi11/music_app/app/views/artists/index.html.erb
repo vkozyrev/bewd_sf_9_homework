@@ -19,7 +19,7 @@
  
   <% @artists.each do |artist| %>
     <tr>
-      <td class="col-md-2"><%= image_tag(artist.artist_image, :class => 'img-thumbnail img-square img-responsive', height: '100', width: '100') unless artist.artist_image.nil? %></td>
+      <td class="col-md-2"><%= image_tag(artist.artist_image, :class => 'img-square img-responsive', height: '100', width: '100') unless artist.artist_image.nil? %></td>
       <td class="col-md-2"><%= artist.fname %></td>
       <td class="col-md-2"><%= artist.lname %></td>
       <td class="col-md-2"><%= artist.record_label.label_name %></td>

@@ -14,4 +14,9 @@ class Song < ActiveRecord::Base
 	belongs_to :artist
 	validates_presence_of :title, :year_released, :song_url
 
+	def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("title like ?", "%#{query}%") 
+  end
+
 end

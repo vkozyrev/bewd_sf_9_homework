@@ -3,6 +3,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 
+// Adding the theme that has a background image and fixed-top nav bar; more styling in _main_nav file in /layouts
+
 body {
     padding-top: 50px;
     margin-top: 50px; 
@@ -13,15 +15,21 @@ body {
     -o-background-size: cover;
 }
 
+// Making h1 text white
+
 h1 { 
 	font-family: 'Poiret One', cursive;
 	color: white;
 
  }
 
+// A div class to add bottom padding
+
 .padded-bottom{
 	padding-bottom: 15px !important;
 }
+
+// Adding the option for an opaque panel
 
 .panel-transparent {
     background: none;
@@ -53,9 +61,13 @@ h1 {
     color: #ffffff !important;
 }
 
+// Making the text of SimpleForm labels white
+
 .simple_form label {
     color: #ffffff
 }
+
+// Changing Bootstrap primary buttons to purple
 
 .btn-primary {
   color: #fff;
@@ -80,6 +92,33 @@ h1 {
   color: #fff;
   background-color: #330066 !important;
   border-color: #330066 !important;
+}
+
+//Styling for buttons on the static homepage
+
+.btn-home {
+  color: #fff;
+  background-color: #4700B2;
+  border-color: #4700B2;
+}
+
+.btn-home:focus,
+.btn-home.focus {
+  color: #fff;
+  background-color: #4700B2;
+  border-color: #4700B2;
+}
+.btn-home:hover {
+  color: #fff;
+  background-color: #4700B2;
+  border-color: #4700B2;
+}
+.btn-home:active,
+.btn-home.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #4700B2;
+  border-color: #4700B2;
 }
 
 
