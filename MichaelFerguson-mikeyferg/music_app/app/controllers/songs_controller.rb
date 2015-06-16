@@ -20,9 +20,10 @@ class SongsController < ApplicationController
     @song.destroy
     redirect_to artists_path
   end
+
   def new
     @song = Song.new do |song|
-      song.artist_id  = params[:id]
+      song.artist_id  = params[:artist_id]
     end
   end
   def create
