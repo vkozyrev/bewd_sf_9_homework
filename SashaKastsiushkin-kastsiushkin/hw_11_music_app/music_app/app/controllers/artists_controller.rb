@@ -34,6 +34,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
+    get_artist.songs.destroy_all
     get_artist.destroy
     redirect_to(:back)
   end
@@ -45,6 +46,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :country)
+    params.require(:artist).permit(:name, :country, :record_label_id)
   end
 end
