@@ -1,7 +1,5 @@
 class ArtistsController < ApplicationController
 
-	http_basic_authenticate_with name: "bewd", password: "bewd", except: [:index, :show]
-
 	def index
 		@artists = Artist.all
 	end

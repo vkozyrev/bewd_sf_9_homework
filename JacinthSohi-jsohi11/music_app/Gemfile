@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'seed_dump'
+gem 'devise'
 
 group :development, :test do
   gem 'pry-byebug'
