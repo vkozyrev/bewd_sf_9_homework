@@ -1,0 +1,7 @@
+<h1>Edit Song Title</h1>
+<%= form_for @song do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :released %>
+<%= f.hidden_field :artist_id, value: @song[:artist_id] %>
+<%= f.submit %>
+<% end %>

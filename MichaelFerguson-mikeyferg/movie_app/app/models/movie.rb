@@ -12,5 +12,5 @@
 
 class Movie < ActiveRecord::Base
   has_many :reviews
-  validates :name, :date_released, :description, presence: true
+  validates :name, :date_released, :description, :movie_image, presence: true
 end

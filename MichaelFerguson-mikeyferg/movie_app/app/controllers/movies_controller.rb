@@ -27,11 +27,15 @@ class MoviesController < ApplicationController
     @movie.update_attributes(movie_params)
     redirect_to movie_path(@movie)
   end
-
+  def destroy
+     @movie = find_movie
+     @movie.destroy
+     redirect_to movies_path
+   end
   private
 
   def movie_params
-    params.require(:movie).permit(:name, :date_released, :description)
+    params.require(:movie).permit(:name, :date_released, :description, :movie_image)
   end
 
   def find_movie
