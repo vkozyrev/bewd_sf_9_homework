@@ -46,7 +46,7 @@ Homework is always due before the next class. Monday homeworks will usually be l
 | 11         |  music_app: due Wednesday, June 17th  | [11_Model_Schema_Design](https://github.com/ga-students/bewd_sf_9/tree/master/11_Model_Schema_Design) |
 | 12         |  Continue working on music_app, use Bootstrap to style your views | [12_Front_End_Integration: Views, Forms & Boostrap](https://github.com/ga-students/bewd_sf_9/tree/master/12_Front_End_Integration) |
 | 13         |  Continue working on music_app | [Project Kickoff, Front-end: Boostrap, Authentication & Authorization](https://github.com/ga-students/bewd_sf_9/tree/master/13_Authentication_Basics) |
-| 14         |            | - |
+| 14         |  music_app should be complete  | PROJECTS! Also, Devise gem for Authentication & Authorization |
 | 15         |            | - |
 | 16         |            | - |
 | 17         |            | - |
