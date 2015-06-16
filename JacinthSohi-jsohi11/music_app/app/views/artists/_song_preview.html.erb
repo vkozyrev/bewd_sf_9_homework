@@ -1,31 +1,4 @@
-<div style="font-family: 'Open Sans', sans-serif;">
-<div class="panel panel-default panel-transparent">
-  <div class="panel-heading">
-    <h3 class="panel-title">All artists</h3>
-  </div>
-  <div class="panel-body">
-<div class="col-md-12">
-  <div class="row padded-bottom">
-    <%=link_to "Add an artist", new_artist_path, class: 'btn btn-md btn-default pull-right' %>
-  </div>
-<table class="table">
-  <tr>
-    <th></th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Record Label</th>
-    <th>Actions</th>
-  </tr>
- 
-  <% @artists.each do |artist| %>
-    <tr>
-      <td class="col-md-2"><%= image_tag(artist.artist_image, :class => 'img-square img-responsive', height: '100', width: '100') unless artist.artist_image.nil? %></td>
-      <td class="col-md-2"><%= artist.fname %></td>
-      <td class="col-md-2"><%= artist.lname %></td>
-      <td class="col-md-2"><%= artist.record_label.label_name %></td>
-      <td class="col-md-2">
-      	<%=link_to "Learn More", artist_path(artist), class: 'btn btn-xs btn-primary' %>
-  <!-- Button trigger modal -->
+<!-- Button trigger modal -->
   <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#artist-<%= artist.id %>-songs">
     Preview songs
   </button>
@@ -65,12 +38,3 @@
     </div>
   </div>
   <!-- End of modal -->
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-</div>
-</div>
-</div>
-</div>
