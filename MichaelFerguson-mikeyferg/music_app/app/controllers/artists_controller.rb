@@ -8,12 +8,14 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
   def create
+  
     @artist = Artist.create(artist_params)
     redirect_to artists_path
   end
 
   def show
     @artist = find_artist
+    @record_label = RecordLabel.find(@artist.record_label_id)
   end
 
   def edit
@@ -27,14 +29,17 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist = find_artist
-    @artist.songs.destroy
+    #@artist.songs.destroy
     @artist.destroy
+    @songs = Song.where(:artist_id => params[:id])
+    @songs.delete_all
+
 
     redirect_to artists_path
   end
   private
   def artist_params
-    params.require(:artist).permit(:name)
+    params.require(:artist).permit(:name, :record_label_id)
   end
 
   def find_artist

@@ -1,0 +1,7 @@
+
+<h1><%= @record_label.name %></h1>
+<% @artists.each do |artist| %>
+<ul>Artist: <%= artist.name %></ul>
+<% end %>
+
+<%= link_to "Add New Artist", new_artist_path %>

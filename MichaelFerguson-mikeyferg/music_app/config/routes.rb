@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 resources :artists
 resources :songs
+resources :record_labels
   # You can have the root of your site routed with "root"
 root 'static_pages#landing_page'
 
