@@ -14,4 +14,9 @@ class Artist < ActiveRecord::Base
   validates_presence_of :name, :country
   has_many :songs
   belongs_to :record_label
+
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("name like ?", "%#{query}%")
+  end
 end

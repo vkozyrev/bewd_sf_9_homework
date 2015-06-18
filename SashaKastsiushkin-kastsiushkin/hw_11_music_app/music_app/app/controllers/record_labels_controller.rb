@@ -3,6 +3,10 @@ class RecordLabelsController < ApplicationController
     @record_labels = RecordLabel.all
   end
 
+  def show
+    @record_label = get_record_label
+  end
+
   def new
     @record_label = RecordLabel.new
   end

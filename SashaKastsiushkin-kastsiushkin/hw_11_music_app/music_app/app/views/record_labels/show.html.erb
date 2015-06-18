@@ -1,2 +1,17 @@
-<h1>RecordLabels#show</h1>
-<p>Find me in app/views/record_labels/show.html.erb</p>
+<h1><%= @record_label.name %></h1>
+
+<div class="col-md-12">
+  <div class="thumbnail">
+    <div class="media">
+      <div class="media-left">
+          <%= image_tag(@record_label.image_url, class: "media-object")  %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Artists</h4>
+          <% @record_label.artists.each do |artist| %>
+            <%= link_to "#{artist.name}", artist_path(artist) %><br />
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
