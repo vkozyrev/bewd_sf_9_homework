@@ -1,0 +1,76 @@
+<div style="font-family: 'Open Sans', sans-serif;">
+<div class="panel panel-default panel-transparent">
+  <div class="panel-heading">
+    <h3 class="panel-title">All artists</h3>
+  </div>
+  <div class="panel-body">
+<div class="col-md-12">
+  <div class="row padded-bottom">
+    <%=link_to "Add an artist", new_artist_path, class: 'btn btn-md btn-default pull-right' %>
+  </div>
+<table class="table">
+  <tr>
+    <th></th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Record Label</th>
+    <th>Actions</th>
+  </tr>
+ 
+  <% @artists.each do |artist| %>
+    <tr>
+      <td class="col-md-2"><%= image_tag(artist.artist_image, :class => 'img-square img-responsive', height: '100', width: '100') unless artist.artist_image.nil? %></td>
+      <td class="col-md-2"><%= artist.fname %></td>
+      <td class="col-md-2"><%= artist.lname %></td>
+      <td class="col-md-2"><%= artist.record_label.label_name %></td>
+      <td class="col-md-2">
+      	<%=link_to "Learn More", artist_path(artist), class: 'btn btn-xs btn-primary' %>
+  <!-- Button trigger modal -->
+  <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#artist-<%= artist.id %>-songs">
+    Preview songs
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="artist-<%= artist.id %>-songs" tabindex="-1" role="dialog" aria-labelledby="artist-<%= artist.id %>-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="artist-<%= artist.id %>-label">Songs</h4>
+        </div>
+        <div class="modal-body">
+              <table class="table table-striped">
+                <tr>
+                  <th>Listen</th>
+                  <th>Title</th>
+                  <th>Year Released</th>
+                </tr>
+              <% artist.songs.each do |song| %>
+                  <tr>
+                    <td class="col-md-1">
+                      <%= link_to "#{song.song_url}", target: "_blank" do %>
+                      <%= image_tag("play_icon.png", :alt => "play", width: '30', height: '30') %>
+                      <% end %>
+                    </td>
+                    <td><%= song.title %></td>
+                    <td><%= song.year_released %></td>
+                  </tr>
+                <% end %>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <%=link_to "View artist", artist_path(artist), class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of modal -->
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+</div>
+</div>
+</div>
+</div>

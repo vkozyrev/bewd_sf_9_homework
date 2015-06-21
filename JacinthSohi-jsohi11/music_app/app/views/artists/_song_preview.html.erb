@@ -1,0 +1,40 @@
+<!-- Button trigger modal -->
+  <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#artist-<%= artist.id %>-songs">
+    Preview songs
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="artist-<%= artist.id %>-songs" tabindex="-1" role="dialog" aria-labelledby="artist-<%= artist.id %>-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="artist-<%= artist.id %>-label">Songs</h4>
+        </div>
+        <div class="modal-body">
+              <table class="table table-striped">
+                <tr>
+                  <th>Listen</th>
+                  <th>Title</th>
+                  <th>Year Released</th>
+                </tr>
+              <% artist.songs.each do |song| %>
+                  <tr>
+                    <td class="col-md-1">
+                      <%= link_to "#{song.song_url}", target: "_blank" do %>
+                      <%= image_tag("play_icon.png", :alt => "play", width: '30', height: '30') %>
+                      <% end %>
+                    </td>
+                    <td><%= song.title %></td>
+                    <td><%= song.year_released %></td>
+                  </tr>
+                <% end %>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <%=link_to "View artist", artist_path(artist), class: 'btn btn-primary' %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of modal -->

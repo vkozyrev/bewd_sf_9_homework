@@ -1,0 +1,82 @@
+<div style="font-family: 'Open Sans', sans-serif;">
+
+<!--Info about the artist-->
+<div class="panel panel-default panel-transparent">
+  <div class="panel-heading">
+    <h3 class="panel-title">Artist Information</h3>
+  </div>
+  <div class="panel-body">  
+
+<div class="row">
+<div class="col-md-10">
+<h2><%= @artist.fname %> <%= @artist.lname %></h2>
+</div>
+
+<div class="col-md-2">
+
+  <!--Edit the artist in a modal-->
+  <%= link_to 'Edit info',  '#', 'data-target' => "#myModal_#{@artist.id}", 'data-toggle' => 'modal', class: 'btn btn-xs btn-default pull-right'  %>
+          <div class="modal fade" id='<%= "myModal_#{@artist.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Edit information for <%= @artist.fname %> <%= @artist.lname %></h4>
+                </div>
+                <div class="modal-body">
+                  <%= render 'form'%>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+</div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-2">
+  	<%= image_tag(@artist.artist_image, :class => 'img-thumbnail img-square img-responsive') unless @artist.artist_image.nil? %>
+  </div>
+  <div class="col-md-8">
+    <p><strong>Record label:</strong><br /> 
+      <%= @artist.record_label.label_name %>
+    </p>
+  	<p><strong>Bio:</strong><br /> 
+  		<%= @artist.bio %>
+  	</p>
+  </div>
+</div>
+</div>
+</div>
+<br />
+
+<!--Display the table of songs -->
+<div class="panel panel-default panel-transparent">
+  <div class="panel-heading">
+    <h3 class="panel-title">Songs</h3>
+  </div>
+  <div class="panel-body"> 
+<table class="table">
+  <tr>
+    <th>Listen</th>
+    <th>Title</th>
+    <th>Year Released</th>
+  </tr>
+<% @artist.songs.each do |song| %>
+    <tr>
+      <td class="col-md-1">
+        <%= link_to "#{song.song_url}", target: "_blank" do %>
+        <%= image_tag("play_icon.png", :alt => "play", width: '30', height: '30') %>
+        <% end %>
+      </td>
+      <td><%= song.title %></td>
+      <td><%= song.year_released %></td>
+    </tr>
+  <% end %>
+</table>
+<p> <%=link_to "Add a song", new_song_path, class: 'btn btn-md btn-default' %> </p>
+</div>
+</div>
+</div>
