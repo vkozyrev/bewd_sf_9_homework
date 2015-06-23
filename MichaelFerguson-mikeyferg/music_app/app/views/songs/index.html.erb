@@ -1,7 +1,7 @@
 <h1>Songs</h1>
 <% @songs.each do |song| %>
-<ul><strong>Name: <%= song.name %></strong></ul>
+<p><strong>Name: <%= song.name %></strong></p>
 <ul>Artist: <%= @artists.find(song.artist_id).name %></ul>
-<%= link_to "Edit", edit_song_path(song) %>
-<%= link_to 'Delete', song, method: :delete, data: {confirm: 'Are you sure you?' } %>
+<ul><%= link_to "Edit", edit_song_path(song) %>
+<%= link_to 'Delete', song, method: :delete, data: {confirm: 'Are you sure you?' } %></ul>
 <% end %>

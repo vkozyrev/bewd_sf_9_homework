@@ -1,8 +1,15 @@
 <h1>Artists Page</h1>
+= form_tag books_path, class: "form-inline", method: :get do
+  .form-group
+    = text_field_tag :query, params[:query], class: "form-control"
+  '
+  = submit_tag "Search", class: "btn btn-primary"
+  - if params[:query].present?
+    '
+    = link_to "clear", books_path
 <h3>Here are all of the Artists</h3>
 <% @artists.each do |artist| %>
-<!-- <ul>Name: <%= artist.name %></ul> -->
-<ul><%=link_to artist.name, artist_path(artist)  %></ul>
+<p><%=link_to artist.name, artist_path(artist)  %></p>
 <% end %>
 
 <%= link_to "Add Artist", new_artist_path %>

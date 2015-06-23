@@ -1,6 +1,7 @@
 <h1>Add Your Favorite Artist</h1>
 
-<%= form_for @artist do |f| %>
-<ul>Artist: <%= f.text_field :name %></ul>
+<%= simple_form_for @artist do |f| %>
+<ul><%= f.input :name %></ul>
+<%= f.association :record_label, method: :record_label_id, prompt: "Choose a Company" %>
 <ul><%= f.submit %></ul>
 <% end %>
