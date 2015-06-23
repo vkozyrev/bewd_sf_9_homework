@@ -11,6 +11,7 @@
 #
 
 class Artist < ActiveRecord::Base
+  searchkick
   has_many :songs
   belongs_to :record_label
 end

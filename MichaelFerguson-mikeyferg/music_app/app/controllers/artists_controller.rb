@@ -1,14 +1,18 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all
+    if params[:query].present?
+      @artists = Artist.search(params[:query], page: params[:page])
+    else
+      @artists = Artist.all
+    end
+
   end
 
   def new
     @artist = Artist.new
   end
   def create
-  
     @artist = Artist.create(artist_params)
     redirect_to artists_path
   end

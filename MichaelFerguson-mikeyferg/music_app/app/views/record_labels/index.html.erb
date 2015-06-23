@@ -1,4 +1,4 @@
 <h1>Record Labels</h1>
 <% @record_labels.each do |record_label| %>
-<ul><%=link_to record_label.name, record_label_path(record_label)%></ul>
+<p><%=link_to record_label.name, record_label_path(record_label)%></p>
 <% end %>
