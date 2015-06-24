@@ -1,0 +1,5 @@
+<%= simple_form_for @artist, :html => {:class => "col-md-6 col-md-offset-3"} do |f| %>
+  <%= f.input :name %>
+  <%= f.association :record_label, method: :record_label_id, prompt: "Label" %>
+  <%= f.submit "Save", :class => 'btn btn-primary btn-block' %>
+<% end %>

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: artists
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  record_label_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  record_label_id: 
+
+two:
+  name: MyString
+  record_label_id: 

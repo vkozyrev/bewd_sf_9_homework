@@ -1,0 +1,24 @@
+<h1> <%= @artist.name %></h1>
+<table class="table table-hover">
+  <tr>
+    <th class="text-center">Song</th>
+    <th class="text-center">Added</th>
+    <th class="text-center">Edit/Delete</th>
+  </tr>
+  <% @artist.songs.each do |song|  %>
+  <tr>
+    <td class="text-center"><%= song.name %></td>
+    <td class="text-center"><%= song.created_at.to_s(:short) %></td>
+    <td class="text-center">
+      <%= link_to edit_song_path(song.id), class: "btn btn-sm btn-default" do %>
+        <i class="fa fa-pencil text-success"></i>
+      <% end %>
+      <%= link_to song, method: :delete, data: { confirm: "You sure?" },  class: "btn btn-sm btn-default" do %>
+        <i class="fa fa-remove text-danger"></i>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Add New Song", new_song_path(:artist_id => @artist.id), class: "btn btn-primary btn-md" %>
+

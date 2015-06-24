@@ -1,0 +1,24 @@
+<h1><%= @record_label.name %></h1>
+
+<table class="table table-hover">
+  <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">Added</th>
+    <th class="text-center">Edit/Delete</th>
+  </tr>
+  <% @record_label.artists.each do |artist|  %>
+  <tr>
+    <td class="text-center"><%= artist.name %></td>
+    <td class="text-center"><%= artist.created_at.to_s(:short) %></td>
+    <td class="text-center">
+      <%= link_to edit_artist_path(artist.id), class: "btn btn-sm btn-default" do %>
+        <i class="fa fa-pencil text-success"></i>
+      <% end %>
+      <%= link_to artist, method: :delete, data: { confirm: "You sure?" },  class: "btn btn-sm btn-default" do %>
+        <i class="fa fa-remove text-danger"></i>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Add New Artist", new_artist_path(:record_label_id => @record_label.id), class: "btn btn-primary btn-lg" %>
