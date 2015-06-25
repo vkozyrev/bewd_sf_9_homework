@@ -7,15 +7,11 @@
   </tr>
   <% @artist.songs.each do |song|  %>
   <tr>
-    <td class="text-center"><%= song.name %></td>
+    <td class="text-center"><%= "#{song.name}" %></td>
     <td class="text-center"><%= song.created_at.to_s(:short) %></td>
     <td class="text-center">
-      <%= link_to edit_song_path(song.id), class: "btn btn-sm btn-default" do %>
-        <i class="fa fa-pencil text-success"></i>
-      <% end %>
-      <%= link_to song, method: :delete, data: { confirm: "You sure?" },  class: "btn btn-sm btn-default" do %>
-        <i class="fa fa-remove text-danger"></i>
-      <% end %>
+      <%= link_to "Edit", edit_song_path(song.id), class: "btn btn-sm btn-default" %>
+      <%= link_to "Delete", song, method: :delete, data: { confirm: "You sure?" },  class: "btn btn-sm btn-default" %>
     </td>
   </tr>
   <% end %>

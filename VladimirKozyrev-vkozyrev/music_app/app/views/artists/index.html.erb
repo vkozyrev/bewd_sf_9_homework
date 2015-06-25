@@ -9,7 +9,7 @@
   <% @artists.each do |artist| %>
   <tr>
     <td class="text-center"><%= link_to "#{artist.name}", artist_path(artist) %></td>
-    <td class="text-center"><%= artist.record_label %></td>
+    <td class="text-center"><%= link_to "#{artist.record_label.name}", record_label_path(artist.record_label) %></td>
     <td class="text-center">
       <%= link_to "Show", artist_path(artist), class: "btn btn-sm btn-default"%>
       <%= link_to "Edit", edit_artist_path(artist.id), class: "btn btn-sm btn-default" %>
